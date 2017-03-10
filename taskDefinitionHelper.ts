@@ -16,7 +16,20 @@ class taskDefinitionHelper{
     }
 
     public static GetTaskDefinitionUpdateRequest(TaskDefinition : AWS.ECS.DescribeTaskDefinitionResponse,ContainerListToUpdate : {[name:string]: string}) : AWS.ECS.RegisterTaskDefinitionRequest{
-        //for(let con)
+        for(let ContainerName in ContainerListToUpdate){
+            let NewValue = ContainerListToUpdate[ContainerName];
+
+            let ContainerDefinition = taskDefinitionHelper.GetContainerDefinitionByName(TaskDefinition.taskDefinition,ContainerName);
+            taskDefinitionHelper.updateDockerImageInContainerDefinition(ContainerDefinition,NewValue);            
+        }
+
+        let Output : AWS.ECS.RegisterTaskDefinitionRequest = {
+            family : TaskDefinition.taskDefinition.family,
+            volumes : TaskDefinition.taskDefinition.volumes,
+            containerDefinitions : TaskDefinition.taskDefinition.containerDefinitions
+        }
+
+        return Output;
     }
 }
 
