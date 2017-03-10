@@ -1,0 +1,29 @@
+{
+  "name": "awsecstools",
+  "version": "1.0.0",
+  "description": "command line tools to automate Task and Service update in AWS Elastic Container Service ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThibaultLanternier/awsecstools.git"
+  },
+  "author": "Thibault Lanternier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ThibaultLanternier/awsecstools/issues"
+  },
+  "homepage": "https://github.com/ThibaultLanternier/awsecstools#readme",
+  "dependencies": {
+    "aws-sdk": "^2.26.0",
+    "commander": "^2.9.0"
+  },
+  "devDependencies": {
+    "@types/aws-sdk": "0.0.42",
+    "@types/commander": "^2.3.31",
+    "@types/jasmine": "^2.5.44",
+    "jasmine": "^2.5.3"
+  }
+}
